@@ -32,5 +32,8 @@ describe('UserListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  
+  it('should retrieve users from UserSerive on init', () => {
+    fixture.detectChanges(); // triggers ngOnInit
+    expect(userServiceSpy).toHaveBeenCalled();
+  })
 });
