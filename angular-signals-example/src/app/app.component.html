@@ -1,3 +1,8 @@
+<h1>Single Signal</h1>
 <label>{{label}}</label>
 <br>
 <button (click)="toggleTheme()">Toggle</button>
+<h1>Computed Signal</h1>
+<label>Total price: {{totalPrice()}}</label>
+<br>
+<input type="number" value="{{quantity()}}" (change)="changeQuantity($event)" />
