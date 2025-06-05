@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, effect, computed } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, ProductListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -52,5 +53,11 @@ export class AppComponent {
     const value = (event.target as HTMLInputElement).value;
     this.filterName.set(value);
   }
+
+  allProducts = [
+    { id: 1, name: 'Iphone', price: 10.33 },
+    { id: 2, name: 'Samsung', price: 4.65 },
+    { id: 3, name: 'Nokia', price: 6.7 }
+  ];
 
 }
