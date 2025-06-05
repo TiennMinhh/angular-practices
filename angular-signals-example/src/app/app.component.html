@@ -6,3 +6,20 @@
 <label>Total price: {{totalPrice()}}</label>
 <br>
 <input type="number" value="{{quantity()}}" (change)="changeQuantity($event)" />
+<h1>Computed Signal User Case</h1>
+<input type="text" (input)="filterProducts($event)" />
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of filteredProducts()">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+  </tbody>
